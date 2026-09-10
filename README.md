@@ -10,14 +10,8 @@ A practical SQL project using a healthcare claims dataset to practice PostgreSQL
 
 patients
    │
-   │ patient_id
-   ▼
-claims ───────────► providers
- │                    │
- │ claim_id           │ provider_id
- ▼                    │
-claim_procedures      │
- │
- │ claim_id
- ▼
-payments
+   └── patient_id ──► claims ◄── provider_id ── providers
+                         │
+                         └── claim_id ──► claim_procedures
+                         │
+                         └── claim_id ──► payments
